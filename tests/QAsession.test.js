@@ -3,6 +3,8 @@ import '@testing-library/jest-dom';
 import '@testing-library/react/dont-cleanup-after-each';
 import userEvent from '@testing-library/user-event';
 import {render, screen, waitFor, cleanup, fireEvent, waitForElement} from '@testing-library/react';
+
+
 import QAIndex from '../client/src/components/QAcomponents/QAIndex.jsx';
 import AList from '../client/src/components/QAcomponents/AList.jsx';
 import QAList from '../client/src/components/QAcomponents/QAList.jsx';
@@ -232,6 +234,21 @@ describe('QAIndex', () => {
     expect(getByText('atest')).toBeInTheDocument();
   });
 
+  it ('snap shots tests for QAIndex component', () => {
 
+
+    const { container } = render(<QAIndex />);
+
+    expect(container).toMatchSnapshot();
+  })
+
+  it ('In the add answer pop up window, should include submit button', () => {
+
+    render(<ListEntry question={{answers: {1:{photos:[]}}, asker_name: 'tester', question_body:'tester', question_date:'test', question_helpfulness: 1, question_id: 1, reported:false}} />)
+    const addAnswerButton = screen.getByText("Add Answer")
+    fireEvent.click(addAnswerButton);
+
+    expect(screen.getByTestId("add-answer-modal-submit")).toBeInTheDocument();
+  })
 
 });
