@@ -207,7 +207,7 @@ app.put('/qa/questions/:question_id/helpful', (req, res) => {
 
 // handle add answer to a question
 app.post('/api/qa/questions/:question_id/answers', (req, res) => {
-  console.log("req for adding answer to this question", req.body)
+  // console.log("req for adding answer to this question", req.body)
 
   const addAdata = req.body
   axios.post(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${req.params.question_id}/answers`, addAdata,

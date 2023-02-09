@@ -50,15 +50,12 @@ const ListEntry = (props) => {
     formData.append('signature', signatureResponse.data.signature)
     formData.append('timestamp', signatureResponse.data.timestamp)
 
-    console.log("data i want send to cloudinary API looks like :", formData)
+    // console.log("data i want send to cloudinary API looks like :", formData)
     const response = await axios.post('https://api.cloudinary.com/v1_1/dubo9irmp/image/upload', formData, {
-      headers: { "Content-Type": "multipart/form-data" },
-      onUploadProgress: function (e) {
-        console.log(e.loaded / e.total)
-    }
+      headers: { "Content-Type": "multipart/form-data" }
     })
 
-    console.log("what is the response back from cloudariy :", response);
+    // console.log("what is the response back from cloudariy :", response);
 
     const photoData = {
       public_id: response.data.public_id,
@@ -66,7 +63,7 @@ const ListEntry = (props) => {
       signature: response.data.signature
     }
 
-    console.log("photoData looks like ?", photoData)
+    // console.log("photoData looks like ?", photoData)
     setPhotos([...photos, response.data.url]);
 
   }
@@ -182,7 +179,7 @@ const ListEntry = (props) => {
         }}>
           <div className="form-group">
             <h2 key={props.question.question_id}data-testid="add-answer-modal-header" className="form-title">Submit Your Answer 👇</h2>
-            <textarea className="form-input" name="body" placeholder="Enter your answer here" onChange={handleBodyChange} style={{ height: '200px', width: '350px' }}></textarea>
+            <textarea className="form-input" name="body" placeholder="Enter your answer here" onChange={handleBodyChange} style={{ height: '200px', width: '95%' }}></textarea>
             {wordCount >= 5 ? <span style={{ color: "green" }}> &#10003; </span> : <span className = "add-answer-body">  {5 - wordCount} words to submit </span> }
             <br/>
             <br/>
