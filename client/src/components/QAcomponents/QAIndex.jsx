@@ -5,7 +5,7 @@ import NewQuestionForm from './NewQuestionForm.jsx';
 import Modal from 'react-modal';
 
 const QAIndex = () => {
-
+  console.log("AWS Test")
   const [questionId, setQuestionId] = useState([37765])
   const [qaData, setQaData] = useState([])
   // inital state for how many questions show on the DOM
