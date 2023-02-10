@@ -62,13 +62,14 @@ const QAIndex = () => {
 
       <div className="search-container">
       <input
+        className="search-bar-input"
         data-testid="search-input"
         placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value) & handleSearch()}
         style={{height: '45px'}}
+
       />
-      <img src='./magnifier.png' alt="magnifier" style={{height: '45px', float: 'right'}} />
       </div>
 
       <QAList qaData={filteredData.length > 0 ? filteredData : qaData} questionsToShow={questionsToShow} />
