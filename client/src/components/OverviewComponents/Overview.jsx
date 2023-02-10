@@ -29,7 +29,14 @@ const Overview = ({productID}) => {
     flexDirection: "column"
   }
 
+  const centeringContainerStyle = {
+    display: "flex",
+    justifyContent: "center"
+  }
+
   return (
+    <div className="centeringContainer" style={centeringContainerStyle}>
+
     <div className="overallContainer" style={overallContainerStyle}>
       <BottomLine></BottomLine>
         <div className="photoAndProdInfoContainer" style={photoAndProdInfoContainerStyle}>
@@ -48,10 +55,11 @@ const Overview = ({productID}) => {
         <div>
           <AdditionalInfo
             productID={productID}
-          />
+            />
         </div>
       <BottomLine></BottomLine>
     </div>
+  </div>
   )
 }
 

@@ -25,6 +25,8 @@ const App = () => {
   }
 
   const logoContainerStyle = {
+    display: "flex",
+    justifyContent: "center",
     background: "white"
   }
 
