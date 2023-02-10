@@ -6,13 +6,13 @@ import MiniGallery from "./MiniGallery.jsx";
 
 
 const MainPhoto = ({productID, photoNumber, setPhotoNumber, styleNumber}) => {
-  // console.log("show me the mainphoto props", {productID, photoNumber, setPhotoNumber, styleNumber})
+
   const [photoList, setPhotoList] = useState([]);
 
   useEffect(() => {
     axios.get(`/products/${productID}/styles`)
     .then((response) => {
-      setPhotoList(response.data.results[styleNumber].photos);
+      setPhotoList(response.data.results[styleNumber].photos !== undefined ? response.data.results[styleNumber].photos : []);
     })
     .catch((error) => {
       console.log('this is an axios get error in MainPhoto.jsx: ', error);

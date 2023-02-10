@@ -17,7 +17,7 @@ const ProdInfo = ({productID, styleNumber, setStyleNumber}) => {
   useEffect(() => {
     axios.get(`/products/${productID}/styles`)
     .then((response) => {
-      setStyleEntry(response.data.results[styleNumber]);
+      setStyleEntry(response.data.results[styleNumber] !== undefined ? response.data.results[styleNumber] : {});
     })
     .catch((error) => {
       console.log('this is an axios get error in ProdInfo.jsx: ', error);
@@ -111,6 +111,8 @@ const ProdInfo = ({productID, styleNumber, setStyleNumber}) => {
   }
 
   return (
+    <>
+    {Object.keys(styleEntry).length === 0 ? <div>Data not available</div> :
   <>
     <div className="prodInfoContainer" style={prodInfoContainerStyle}>
       <div>
@@ -144,14 +146,19 @@ const ProdInfo = ({productID, styleNumber, setStyleNumber}) => {
           />
       </div>
       <div className="checkout">
+        {Object.keys(styleEntry).length !== 0 ?
           <Checkout
-              productID={productID}
-              styleNumber={styleNumber}
-              styleEntry={styleEntry}
+          productID={productID}
+          styleNumber={styleNumber}
+          styleEntry={styleEntry}
           />
+          : "Loading"
+        }
       </div>
     </div>
   </>
+      }
+      </>
   )
 }
 
