@@ -51,7 +51,6 @@ const Container = styled.div`
 `
 
 const StarsBars = ({ percentages, rating, num, reviews, setReviews, allReviews}) => {
-  //  console.log('Reviews --->', reviews)
 
   const [isHover, setIsHover] = useState(false);
   const [toggle, setToggle] = useState(true)
@@ -91,7 +90,6 @@ const StarsBars = ({ percentages, rating, num, reviews, setReviews, allReviews})
 
   return (
     <Container>
-      {/* <div>{removeFilters === true ? <button>Remove filters</button> : '' }</div> */}
       <GrayBar onClick={((event) =>  {filterReviews(num)})} onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}>
         <StarNum>{num} stars</StarNum>

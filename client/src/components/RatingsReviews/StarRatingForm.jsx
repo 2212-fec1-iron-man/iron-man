@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ImStarFull, ImStarEmpty, ImStarHalf} from "react-icons/im";
 
 const StarRatingForm = ({rating, setRating}) => {
-  // const [rating, setRating] = useState(0);
+
   const [hover, setHover] = useState(0);
 
   return (
