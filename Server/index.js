@@ -1,7 +1,10 @@
 const path = require("path");
-const {token} = require('../config.js');
+const {token, CLOUDNAME, CLOUDAPIKEY, CLOUNDSECRET} = require('../config.js');
 const axios = require('axios');
 const cors = require('cors')
+const cloudinary = require("cloudinary").v2
+const fse = require("fs-extra")
+
 
 const express = require('express');
 const app = express();
@@ -12,6 +15,15 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../client/dist")));
+
+
+
+const cloudinaryConfig = cloudinary.config({
+  cloud_name: CLOUDNAME,
+  api_key: CLOUDAPIKEY,
+  api_secret: CLOUNDSECRET,
+  secure: true
+})
 
 //Overview routes:
 
@@ -230,6 +242,18 @@ app.get('/api/qa/questions', (req, res) => {
     res.status(501);
   })
 })
+
+app.get("/get-signature", (req, res) => {
+  const timestamp = Math.round(new Date().getTime() / 1000)
+  const signature = cloudinary.utils.api_sign_request(
+    {
+      timestamp: timestamp
+    },
+    cloudinaryConfig.api_secret
+  )
+  res.json({ timestamp, signature })
+})
+
 
 // ************************************************************** */
 //Review routes:

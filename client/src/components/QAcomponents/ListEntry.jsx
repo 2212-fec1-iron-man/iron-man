@@ -3,6 +3,11 @@ import {useState} from 'react';
 import ReactModal from 'react-modal';
 import axios from 'axios';
 import styled from 'styled-components';
+// import cloudinary
+import {Image, Transformatin} from 'cloudinary-react';
+
+
+const CLOUDAPIKEY = '814939981436739';
 
 const BottomLine = styled.div`
 background-color: #D3D3D3;
@@ -23,10 +28,44 @@ const ListEntry = (props) => {
   const [isValidEmail, setIsValidEmail] = useState(false);
   // handle the photos upload
   const [fileInputs, setFileInputs] = useState([0]);
+
+  const [photos, setPhotos] = useState([]);
+
   const addFileInput = () => {
     if (fileInputs.length < 3) {
       setFileInputs([...fileInputs, fileInputs.length]);
     }
+  }
+
+  const handleFileUpload = async (event, index) => {
+
+    event.preventDefault();
+
+    const signatureResponse = await axios.get("/get-signature")
+    const file = event.target.files[0];
+
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('api_key', CLOUDAPIKEY)
+    formData.append('signature', signatureResponse.data.signature)
+    formData.append('timestamp', signatureResponse.data.timestamp)
+
+    // console.log("data i want send to cloudinary API looks like :", formData)
+    const response = await axios.post('https://api.cloudinary.com/v1_1/dubo9irmp/image/upload', formData, {
+      headers: { "Content-Type": "multipart/form-data" }
+    })
+
+    // console.log("what is the response back from cloudariy :", response);
+
+    const photoData = {
+      public_id: response.data.public_id,
+      version: response.data.version,
+      signature: response.data.signature
+    }
+
+    // console.log("photoData looks like ?", photoData)
+    setPhotos([...photos, response.data.url]);
+
   }
 
   const handleEmailChange = (event) => {
@@ -111,20 +150,22 @@ const ListEntry = (props) => {
             background: 'none'
           }
         }}>
+          {/* this part is close button */}
           <button className="close-button" style={{ color: 'black', cursor: 'pointer', position: 'absolute', top: '25px', right: '25px', background:'none', border:'none' }}onClick={() => setIsModalOpen(false)}>[Close]</button>
 
         <form data-testid="add-answer-modal" className="iron-man-form" onSubmit ={(event) => {
           event.preventDefault();
-          let photos = [];
-          for (let i = 0; i < fileInputs.length; i++) {
+          let apiphotos = [];
+          for (let i = 0; i < photos.length; i++) {
+            console.log(photos[i]);
             if (event.target[`photos-${i}`].files.length > 0) {
-              photos.push(event.target[`photos-${i}`].files[0].name);
+              apiphotos.push(photos[i]);
             }
           }
 
-          const data = {body: event.target.body.value, name: event.target.name.value, email: event.target.email.value, photos: photos}
+          const data = {body: event.target.body.value, name: event.target.name.value, email: event.target.email.value, photos: apiphotos}
 
-
+          console.log("sending post data to API ")
           const addAnsUrl = `/api/qa/questions/${props.question.question_id}/answers`;
 
           axios.post(addAnsUrl, data)
@@ -138,24 +179,34 @@ const ListEntry = (props) => {
         }}>
           <div className="form-group">
             <h2 key={props.question.question_id}data-testid="add-answer-modal-header" className="form-title">Submit Your Answer 👇</h2>
-            <textarea className="form-input" name="body" placeholder="Enter your answer here" onChange={handleBodyChange} style={{ height: '200px', width: '350px' }}></textarea>
+            <textarea className="form-input" name="body" placeholder="Enter your answer here" onChange={handleBodyChange} style={{ height: '200px', width: '95%' }}></textarea>
             {wordCount >= 5 ? <span style={{ color: "green" }}> &#10003; </span> : <span className = "add-answer-body">  {5 - wordCount} words to submit </span> }
             <br/>
             <br/>
             <br/>
             {fileInputs.map((input, index) => (
                 <div key={index}>
-                  <input key={index} className="form-input" type="file" name={`photos-${index}`} accept="image/*" />
+                  <input key={index} className="form-input" type="file" name={`photos-${index}`} accept="image/*" onChange={(event) => handleFileUpload(event, index)}/>
                   <br />
                   <br />
                 </div>
               ))}
+              <div className="answer-images-container">
+                {photos.map((photo, index) => (
+                  <div key={index}>
+                    <img className="answer-upload-image" src={photo} alt="Uploaded photo" />
+                    <br />
+                  </div>
+                ))}
+              </div>
+
               {fileInputs.length < 3 && (
                 <button data-testid="add-answer-modal-addphoto"  className="addphoto-submit" onClick={(event) => {
                   event.preventDefault();
                   addFileInput();
                 }}>Add Another Photo</button>
               )}
+
             <br/>
             <br/>
 

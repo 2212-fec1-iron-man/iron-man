@@ -23,6 +23,7 @@ const AList = (props) => {
               setNumAnswersDisplayed(showMore ? numAnswersDisplayed + 2 : 2);
               setShowMore(!showMore);
               setOverflow(showMore ? 'scroll' : 'hidden');
+
           }}>
               {showMore ? 'LOAD MORE ANSWERS 👈' : 'COLLAPSE ANSWERS 👈'}
           </button>
