@@ -21,7 +21,6 @@ const RatingsReviews = ( {product_id} /* product_id produt_id from overview comp
       setAllReviews(res.data.results)
     });
   }, [sortBy, product_id]);
-  // console.log('REVIEWS: ', reviews)
 
   const handleReviewsShown = () => {
     setReviewsShown(reviewsShown + 2)
@@ -30,14 +29,13 @@ const RatingsReviews = ( {product_id} /* product_id produt_id from overview comp
   const handleSortBy = (input) => {
     setSortBy(input)
   }
-  // console.log('Reviews: ', reviews)
 
   // Ratings
   const[ratingsData, setRatingsData] = useState({})
   const[ratings, setRatings] = useState([]);
   const[averageRating, setAverageRating] = useState(0);
   const[recommendPerc, setRecommendPerc] = useState(0);
-  const[starsPercentage, setStarPercentage] = useState({5: 0, 4: 0, 3: 0, 2: 0, 1: 0})
+  const[starsPercentage, setStarPercentage] = useState({1: 0, 2: 0, 3: 0, 4: 0, 5: 0})
   const[characteristics, setcharacteristics] = useState({})
 
   useEffect(() => {
@@ -52,35 +50,31 @@ const RatingsReviews = ( {product_id} /* product_id produt_id from overview comp
     })
   }, [product_id])
 
-  function calculateAverageRating(obj) {
-    let sum = (obj[1] * 1) + (obj[2] * 2) + (obj[3] * 3) + (obj[4] * 4) + (obj[5] * 5);
-    let count = Number(obj[1]) + Number(obj[2]) + Number(obj[3]) + Number(obj[4]) + Number(obj[5])
-    return Math.round((sum/count) * 10) / 10;
+  function calculateAverageRating(rating) {
+    let sum = (rating[1] * 1) + (rating[2] * 2) + (rating[3] * 3) + (rating[4] * 4) + (rating[5] * 5);
+    let total = Number(rating[1]) + Number(rating[2]) + Number(rating[3]) + Number(rating[4]) + Number(rating[5])
+    return Math.round((sum/total) * 10) / 10;
   }
 
-  function calculatePercentageRecommend(obj) {
-    return Math.round(Number(obj.true)/ (Number(obj.true) + Number(obj.false)) * 100)
+  function calculatePercentageRecommend(recommend) {
+    return Math.round(Number(recommend.true)/ (Number(recommend.true) + Number(recommend.false)) * 100)
   }
 
-  function calculateStarPercentage(obj) {
-    let sum = Number(obj[5]) + Number(obj[4]) + Number(obj[3]) + Number(obj[2]) + Number(obj[1]);
+  function calculateStarPercentage(rating) {
+    let sum = Number(rating[1]) + Number(rating[2]) + Number(rating[3]) + Number(rating[4]) + Number(rating[5]);
     return ({
-      5: Math.round((Number(obj[5])/sum) * 100) + '%',
-      4: Math.round((Number(obj[4])/sum) * 100) + '%',
-      3: Math.round((Number(obj[3])/sum) * 100) + '%',
-      2: Math.round((Number(obj[2])/sum) * 100) + '%',
-      1: Math.round((Number(obj[1])/sum) * 100) + '%'
+      1: Math.round((Number(rating[1])/sum) * 100) + '%',
+      2: Math.round((Number(rating[2])/sum) * 100) + '%',
+      3: Math.round((Number(rating[3])/sum) * 100) + '%',
+      4: Math.round((Number(rating[4])/sum) * 100) + '%',
+      5: Math.round((Number(rating[5])/sum) * 100) + '%'
     })
   }
-    // console.log('all rating data: ', ratingsData)
-    // console.log('ratings: ', ratings)
-    // console.log('characteristics: ', characteristics)
-    // console.log(starsPercentage)
 
   return (
     <div id='ratings-reviews'>
       <h5 data-testid="test-1" className='ratings-reviews-title'> RATINGS & REVIEWS</h5>
-      <Ratings product_id={product_id} ratingsData={ratingsData} ratings={ratings} averageRating={averageRating} recommendPerc={recommendPerc} starsPercentage={starsPercentage} characteristics={characteristics} reviews={reviews} setReviews={setReviews} allReviews={allReviews}/>
+      <Ratings product_id={product_id} ratingsData={ratingsData} ratings={ratings} averageRating={averageRating} recommendPerc={recommendPerc} starsPercentage={starsPercentage} characteristics={characteristics} reviews={reviews} setReviews={setReviews} allReviews={allReviews} sortBy={sortBy}/>
       <ReviewsList product_id={product_id} reviews={reviews} sortBy={sortBy} reviewsShown={reviewsShown} handleSortBy={handleSortBy} handleReviewsShown={handleReviewsShown} characteristics={characteristics} allReviews={allReviews}/>
     </div>
   );

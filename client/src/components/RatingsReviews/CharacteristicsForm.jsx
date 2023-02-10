@@ -19,7 +19,7 @@ const CharacteristicForm = ({ characteristic, value, allChars, charChosen, handl
     }
   }, [])
   const test = [1, 2, 3, 4, 5]
-  // console.log('CHAR NAMEE', charChosen[characteristic])
+
   return (
     <div>
       <br />

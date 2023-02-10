@@ -65,8 +65,6 @@ import styled from 'styled-components';
 
 const CharacteristicBreakdown = ({categoryValue, category}) => {
 
-  // console.log('categoryValue: ', categoryValue)
-  // console.log('category: ', category)
   const checkCategory = (category) => {
     if (category === 'Size') {
       return(

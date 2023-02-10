@@ -14,7 +14,7 @@ const ReviewsList = ({product_id, reviews, sortBy, reviewsShown, handleSortBy, h
 
   return (
     <div className='reviews-list'>
-        <div className='reviews-tot-sorted-by' value={sortBy} onChange={(event) => {handleSortBy(event.target.value)}}> {reviews.length} reviews, sorted by
+        <div className='reviews-tot-sorted-by' value={sortBy} onChange={(event) => {event.preventDefault(); handleSortBy(event.target.value)}}> {reviews.length} reviews, sorted by
           <select className='sort-by'>
             <option value='relevance'>relevance</option>
             <option value='newest'>newest</option>
@@ -42,15 +42,14 @@ const ReviewsList = ({product_id, reviews, sortBy, reviewsShown, handleSortBy, h
               bottom: 'auto',
               marginRight: '-50%',
               transform: 'translate(-50%, -50%)',
-              width: '400px',
-              height: '300px'
+              width: '600px',
+              height: '600px',
+              border: 'none'
             }
           }}>
             <AddReviewForm product_id={product_id} closeModal={() => setModalState(false)} characteristics={characteristics}/>
            </Modal>
         </div>
-        <br />
-        <br />
     </div>
 
   )

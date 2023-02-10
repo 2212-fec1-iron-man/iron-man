@@ -4,8 +4,9 @@ import Stars from './Stars.jsx';
 import StarsBars from './StarsBars.jsx';
 import CharacteristicBreakdown from './CharacteristicBreakdown.jsx';
 
+import styled from 'styled-components';
 
-const Ratings = ({product_id, ratingsData, ratings, averageRating, recommendPerc, starsPercentage, characteristics, reviews, setReviews, allReviews}) => {
+const Ratings = ({product_id, ratingsData, ratings, averageRating, recommendPerc, starsPercentage, characteristics, reviews, setReviews, allReviews, sortBy}) => {
 
   return (
   <div className='ratings'>
@@ -18,7 +19,7 @@ const Ratings = ({product_id, ratingsData, ratings, averageRating, recommendPerc
     <div className='stars-bars'>
       {Object.keys(starsPercentage).map((num, index) => {
         return (
-            <StarsBars key={index} num={num} percentages={starsPercentage[num]} rating={ratings} reviews={reviews} setReviews={setReviews} allReviews={allReviews}/>
+            <StarsBars key={index} num={num} percentages={starsPercentage[num]} rating={ratings} reviews={reviews} setReviews={setReviews} allReviews={allReviews} sortBy={sortBy}/>
         )
       })}
     </div>

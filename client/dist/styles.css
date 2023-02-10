@@ -158,7 +158,7 @@ button.form-submit:not([disabled]) {
   font-weight: bold;
 }
 
-.button-show-more-answered-question, .more-reviews, .add-review {
+.button-show-more-answered-question, .more-reviews, .add-review, .submit-button {
   background: none;
   padding: 2%;
   font-weight: bolder;
@@ -469,4 +469,20 @@ img {
   width: auto;
   height: 100px;
   border-radius: 25%;
+}
+
+.char-count, .add-email{
+  color:rgb(227, 218, 218);
+  font-size: medium;
+
+}
+
+/* .review-form {
+  font-family: Helvetica;
+} */
+
+
+.add-photo-button {
+  background: none;
+  /* font-weight: bold; */
 }
