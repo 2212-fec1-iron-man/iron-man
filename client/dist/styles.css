@@ -32,6 +32,14 @@ button.form-submit:not([disabled]) {
   display: flex;
 }
 
+.search-bar-input {
+  background-image: url(https://cdn2.hubspot.net/hubfs/4004166/bioticresearch_website_assets/images/search_icon.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+
+}
+
+
 .question-container {
 
   font-family: Helvetica;
