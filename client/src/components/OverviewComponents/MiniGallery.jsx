@@ -67,6 +67,15 @@ const handleThumbnailSelect = (event) => {
   setPhotoNumber(Number(event.target.id.slice(5)) + windowIndex);
 }
 
+console.log("photoNumber: ", photoNumber, " windowIndex: ", windowIndex);
+
+if (photoNumber >= windowIndex + 5) {
+  setWindowIndex(windowIndex + 1)
+} else if (photoNumber < windowIndex) {
+  setWindowIndex(windowIndex - 1)
+}
+
+
 let galleryWindow = [];
 
 if (windowIndex + 5 > photoList.length - 1) {

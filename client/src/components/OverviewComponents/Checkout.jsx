@@ -5,7 +5,7 @@ import axios from "axios";
 
 
 const Checkout = ({styleEntry, productID, styleNumber}) => {
-  // console.log('show me the checkout props :', {styleEntry, productID, styleNumber})
+
 
   const [sizeDropDown, setSizeDropDown] = useState([]);
   const [quantityDropDown, setQuantityDropDown] = useState([]);
@@ -23,6 +23,7 @@ const Checkout = ({styleEntry, productID, styleNumber}) => {
   }
 
   useEffect(() => {
+
     if (styleEntry.skus !== undefined) {
       let dropDown = Object.keys(styleEntry.skus).map((key, index) => {
             return (
@@ -32,15 +33,18 @@ const Checkout = ({styleEntry, productID, styleNumber}) => {
       setSizeDropDown(dropDown);
     }
 
+    let quantityNormal = 0;
     if (styleEntry.skus !== undefined) {
       for (let key in styleEntry.skus) {
         if (styleEntry.skus[key].size === size) {
-          setQty(styleEntry.skus[key].quantity < 16 ? styleEntry.skus[key].quantity : 15);
+          //setQty(styleEntry.skus[key].quantity < 16 ? styleEntry.skus[key].quantity : 15);
+          quantityNormal = styleEntry.skus[key].quantity < 16 ? styleEntry.skus[key].quantity : 15;
+          break;
         }
       }
       //generate array with integers from 1 to quanity and use as dropdown values
       let qtyArray = [];
-      for (let i = 1; i <= qty; i++) {
+      for (let i = 2; i <= quantityNormal; i++) {
         qtyArray.push(i);
       }
       const finalQty = qtyArray.map((value, index) => {
@@ -50,7 +54,7 @@ const Checkout = ({styleEntry, productID, styleNumber}) => {
         })
       setQuantityDropDown(finalQty);
     }
-  },[styleEntry, size, productID, styleNumber]);
+  },[styleEntry, size, productID]);
 
   const handleChange = (event) => {
     setSize(event.target.value);
@@ -171,7 +175,9 @@ const Checkout = ({styleEntry, productID, styleNumber}) => {
             data-layout="button_count">
           </div>
        </div>
-      <a data-pin-do="buttonBookmark" href="https://www.pinterest.com/pin/create/button/"></a>
+       <img src="saveButton.png" style={{width:"50px", height:"20px"}}></img>
+       <a data-pin-do="buttonBookmark" href="https://www.pinterest.com/pin/create/button/"></a>
+
     </div>
   </>
   )
