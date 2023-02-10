@@ -195,7 +195,6 @@ const ListEntry = (props) => {
                 {photos.map((photo, index) => (
                   <div key={index}>
                     <img className="answer-upload-image" src={photo} alt="Uploaded photo" />
-
                     <br />
                   </div>
                 ))}
