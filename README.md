@@ -36,6 +36,7 @@
 
 
 
+
 **Ratings & Reviews**
 
 In this section is divided into two components, the rating breakdown for the current product are shown on the left and the reviews are shown on the right.
