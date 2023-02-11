@@ -33,3 +33,18 @@
 **Users can add questions by using add question button on the bottom**
 
 <img src="https://recordit.co/8EJcmJVmQq.gif" width="700">
+
+
+
+**Ratings & Reviews**
+
+In this section is divided into two components, the rating breakdown for the current product are shown on the left and the reviews are shown on the right.
+
+In the rating breakdown, by clicking on either the star rating number, the bar, or the number of the reviews for that star the reviews are filtered for the star selected and clicking again on any of the components mentioned removes the filter and all the reviews are shown again
+The reviews can be sorted by relevance, newest, and helpfulness. 
+If a review has images they can be enlarged by clicking on them.
+If a review is deemed helpful it can be upvoted by clicking on ‘Yes’.
+Two more reviews are loaded every time the ‘More Reviews’ button is clicked.
+A new review can be added by clicking on the ‘Add a Review +’ button and filling out the form the form that pops up. 
+
+<img src="http://g.recordit.co/EtyIDVzZsi.gif" width="700">
