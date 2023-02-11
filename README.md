@@ -8,11 +8,12 @@
 	**7. On your fork on github, switch to mybranch**
 	**8. Create the pull request from here.**
 
-<img src="https://recordit.co/b6HCWzDm5m.gif" width=700>
 
 
 ## Overview Section:
 
+
+<img src="https://recordit.co/b6HCWzDm5m.gif" width=700>
 
 **The overview section features two main areas: a photo area on the left and a product info area on the right.**
 
