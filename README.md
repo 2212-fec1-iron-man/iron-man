@@ -1,6 +1,6 @@
 **At the top of q&a session, there is a search bar that can be used to search for questions,**
 
-**it will start rendering questions once the user has typed in three characters.**
+**It will start rendering questions once the user has typed in three characters.**
 
 <img src="https://recordit.co/qtoHuquys3.gif" width="700">
 
@@ -19,7 +19,7 @@
 
 <img src="https://recordit.co/ARMrmM8kr9.gif" width="700">
 
-**if we click the report button, the forms' text areas will have a length check, and the submit button will not be activated until a certain length has been reached, and the same functionality applies to all the forms.**
+**If user click the report button, the forms' text areas will have a length check, and the submit button will not be activated until a certain length has been reached, and the same functionality applies to all the forms.**
 
 
 <img src="https://recordit.co/Wz5RsrzWMy.gif" width="700">
@@ -32,6 +32,6 @@
 
 <img src="https://recordit.co/AbQn63hzdU.gif" width="700">
 
-**users can add questions by using add question button on the bottom**
+**Users can add questions by using add question button on the bottom**
 
 <img src="https://recordit.co/8EJcmJVmQq.gif" width="700">
