@@ -1,3 +1,13 @@
+# 🖥 FEC
+
+## 🧾 Table of Contents
+- [Git Workflow](#git-workflow)
+- [FEC Project Overview & Demos](#project-overview--demos)
+  - [Overview](#overview)
+  - [Questions](#questions)
+  - [Ratings and Reviews](#ratings-and-reviews)
+
+
 ## Git workflow:
 	**1. Sync your fork’s main branch on github with organization’s main branch.**
 	**2. On your local machine, make sure you are on your main branch (git checkout main)**
@@ -10,7 +20,7 @@
 
 
 
-## Overview Section:
+## Overview
 
 
 <img src="https://recordit.co/b6HCWzDm5m.gif" width=700>
@@ -30,7 +40,7 @@
 **Lastly, below the photo and product information sections there is a small area that shows additional information about the product.  This will update based on the product selection.**
 
 
-## Q and A Section:
+## Questions
 
 
 **At the top of q&a session, there is a search bar that can be used to search for questions, It will start rendering questions once the user has typed in three characters.**
@@ -70,7 +80,7 @@
 <img src="https://recordit.co/8EJcmJVmQq.gif" width="700">
 
 
-## Ratings & Reviews Section:
+## Ratings and Reviews
 
 
 **In this section is divided into two components, the rating breakdown for the current product are shown on the left and the reviews are shown on the right.**
