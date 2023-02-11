@@ -11,6 +11,9 @@
 <img src="https://recordit.co/b6HCWzDm5m.gif" width=700>
 
 
+## Overview Section:
+
+
 **The overview section features two main areas: a photo area on the left and a product info area on the right.**
 
 **The photo area consists of a large main photo, and a thumbnail image carousel.  By selecting an image on the carousel, the large main photo will update.  Similarly, if a user changes the main photo by clicking the “<“ or “>” symbols, the thumbnail image that is highlighted will change accordingly.**
@@ -26,6 +29,7 @@
 **Lastly, below the photo and product information sections there is a small area that shows additional information about the product.  This will update based on the product selection.**
 
 
+## Q and A Section:
 
 
 **At the top of q&a session, there is a search bar that can be used to search for questions, It will start rendering questions once the user has typed in three characters.**
@@ -65,17 +69,16 @@
 <img src="https://recordit.co/8EJcmJVmQq.gif" width="700">
 
 
+## Ratings & Reviews Section:
 
 
-**Ratings & Reviews**
+**In this section is divided into two components, the rating breakdown for the current product are shown on the left and the reviews are shown on the right.**
 
-In this section is divided into two components, the rating breakdown for the current product are shown on the left and the reviews are shown on the right.
-
-In the rating breakdown, by clicking on either the star rating number, the bar, or the number of the reviews for that star the reviews are filtered for the star selected and clicking again on any of the components mentioned removes the filter and all the reviews are shown again
+**In the rating breakdown, by clicking on either the star rating number, the bar, or the number of the reviews for that star the reviews are filtered for the star selected and clicking again on any of the components mentioned removes the filter and all the reviews are shown again
 The reviews can be sorted by relevance, newest, and helpfulness. 
 If a review has images they can be enlarged by clicking on them.
 If a review is deemed helpful it can be upvoted by clicking on ‘Yes’.
 Two more reviews are loaded every time the ‘More Reviews’ button is clicked.
-A new review can be added by clicking on the ‘Add a Review +’ button and filling out the form that pops up. 
+A new review can be added by clicking on the ‘Add a Review +’ button and filling out the form that pops up.**
 
 <img src="http://g.recordit.co/EtyIDVzZsi.gif" width="700">
