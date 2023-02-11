@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+**At the top of q&a session, there is a search bar that can be used to search for questions, It will start rendering questions once the user has typed in three characters.**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://recordit.co/qtoHuquys3.gif" width="700">
 
-## Available Scripts
+**Below the search bar is the question and answer list. Initially, the page will render four questions and two answers for each question, sorted by helpfulness. If there are more than two answers for a given question, a "load more answers" button will be activated to render two more answers until there are no more, at which point a "collapse" button will be displayed. The same functionality applies to the questions themselves.**
 
-In the project directory, you can run:
 
-### `npm start`
+<img src="https://recordit.co/5XyQYO4X7c.gif" width="700">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**The helpful buttons are functional, meaning the numbers will accumulate and will be disabled after the user has clicked on them.** 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+<img src="https://recordit.co/4TUq454kw2.gif" width="700">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Images in the answer can be enlarged through the use of the ReactModal component,** 
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="https://recordit.co/ARMrmM8kr9.gif" width="700">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**If user click the report button, the forms' text areas will have a length check, and the submit button will not be activated until a certain length has been reached, and the same functionality applies to all the forms.**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+<img src="https://recordit.co/Wz5RsrzWMy.gif" width="700">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**The "add answer" button for each question is allowing the user add new answers including upload photos.**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img src="https://recordit.co/KPKPxKjAP6.gif" width="700">
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**On the bottom of the Q&A session there would be a more answered questions button, which will render more questions on the page**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<img src="https://recordit.co/AbQn63hzdU.gif" width="700">
 
-## Learn More
+**Users can add questions by using add question button on the bottom**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="https://recordit.co/8EJcmJVmQq.gif" width="700">
