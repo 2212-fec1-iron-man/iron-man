@@ -1,12 +1,13 @@
 **Git workflow:
-	1. Sync your fork’s main branch on github with organization’s main branch.
-	2. On your local machine, make sure you are on your main branch (git checkout main)
-	3. Run git pull (this makes your local machine same as your github fork, which is the same as organization due to step 1)
-	4. Create a branch to do your work using git checkout -b mybranch
-	5. Work on your branch, save your changes, add them, commit them
-	6. Run git push origin mybranch (this will push your local branch to your fork, creating a branch there if doesn't already exist)
-	7. On your fork on github, switch to mybranch
-	8. Create the pull request from here.**
+	1. Sync your fork’s main branch on github with organization’s main branch.**
+	
+	**2. On your local machine, make sure you are on your main branch (git checkout main)**
+	**3. Run git pull (this makes your local machine same as your github fork, which is the same as organization due to step 1)**
+	**4. Create a branch to do your work using git checkout -b mybranch**
+	**5. Work on your branch, save your changes, add them, commit them**
+	**6. Run git push origin mybranch (this will push your local branch to your fork, creating a branch there if doesn't already exist)**
+	**7. On your fork on github, switch to mybranch**
+	**8. Create the pull request from here.**
 
 <img src="https://recordit.co/7QQFraVbP9.gif" width="700">
 
