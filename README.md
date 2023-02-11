@@ -1,6 +1,4 @@
-**At the top of q&a session, there is a search bar that can be used to search for questions,**
-
-**It will start rendering questions once the user has typed in three characters.**
+**At the top of q&a session, there is a search bar that can be used to search for questions, It will start rendering questions once the user has typed in three characters.**
 
 <img src="https://recordit.co/qtoHuquys3.gif" width="700">
 
