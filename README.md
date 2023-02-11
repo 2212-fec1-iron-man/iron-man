@@ -46,6 +46,6 @@ The reviews can be sorted by relevance, newest, and helpfulness.
 If a review has images they can be enlarged by clicking on them.
 If a review is deemed helpful it can be upvoted by clicking on ‘Yes’.
 Two more reviews are loaded every time the ‘More Reviews’ button is clicked.
-A new review can be added by clicking on the ‘Add a Review +’ button and filling out the form the form that pops up. 
+A new review can be added by clicking on the ‘Add a Review +’ button and filling out the form that pops up. 
 
 <img src="http://g.recordit.co/EtyIDVzZsi.gif" width="700">
